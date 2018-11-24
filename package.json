@@ -1,0 +1,18 @@
+{
+  "name": "minitracker-bot",
+  "version": "1.0.0",
+  "description": "Mini Stat tracker",
+  "main": "main.ts",
+  "author": "AKtheGREAT",
+  "dependencies": {
+    "@types/node": "^10.12.10",
+    "discord.js": "^11.4.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "tsc"
+  },
+  "license": "ISC",
+  "devDependencies": {},
+  "keywords": []
+}
