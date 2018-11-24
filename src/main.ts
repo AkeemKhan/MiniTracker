@@ -2,8 +2,7 @@ import * as discord from 'discord.js';
 import { Bo4Command } from "./commands/Bo4Command";
 import { ICommand } from "./commands/ICommand";
 
-const token = "XXXXX";
-const prefix = "!";
+const config = require("./config.json");
 const client = new discord.Client();
 
 const commands = ["bo4"];
@@ -17,10 +16,13 @@ client.on('ready', () => {
 client.on('message', (message) => {
     
     if(message.author.bot) return;
-    if(message.content.indexOf(prefix) !== 0) return;
+    if(message.content.indexOf(config.prefix) !== 0) return;
 
-    let args = message.content.slice(prefix.length).trim().split(/ !/g);
-    let commandString = args.shift().toLowerCase();    
+    let args = message.content.slice(config.prefix.length).trim().split(/ /g);
+    let commandString = args[0].toLowerCase();    
+
+    console.log("Command " + commandString);
+
     let command = map.get(commandString);
 
     if (command != null) {
@@ -29,4 +31,4 @@ client.on('message', (message) => {
 
 });
 
-client.login(token);
+client.login(config.token);
