@@ -2,7 +2,7 @@ import * as discord from 'discord.js';
 import { Bo4Command } from "./commands/Bo4Command";
 import { ICommand } from "./commands/ICommand";
 
-const token = "NTExNTA2NjkzMDQyMDc3NzA2.DtrIvw.UiwFneg2Ts8-dgZtqzUAKybvlME";
+const token = "XXXXX";
 const prefix = "!";
 const client = new discord.Client();
 
