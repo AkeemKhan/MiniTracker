@@ -3,9 +3,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var Bo4Command = /** @class */ (function () {
     function Bo4Command() {
     }
-    Bo4Command.prototype.handleCommand = function (message) {
+    Bo4Command.prototype.handleCommand = function (message, args) {
         message.channel.send("Handling");
-        message.channel.send(message.content);
+        message.channel.send(args);
     };
     return Bo4Command;
 }());

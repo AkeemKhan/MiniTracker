@@ -16,11 +16,14 @@ client.on('ready', () => {
 
 client.on('message', (message) => {
     
+    if(message.author.bot) return;
+    if(message.content.indexOf(prefix) !== 0) return;
+
     let args = message.content.slice(prefix.length).trim().split(/ !/g);
     let commandString = args.shift().toLowerCase();    
     let command = map.get(commandString);
 
-    if (command != null){
+    if (command != null) {
         command.handleCommand(message);
     }
 

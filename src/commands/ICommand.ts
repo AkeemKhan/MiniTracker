@@ -1,7 +1,5 @@
 import * as discord from 'discord.js';
 
-interface ICommand {    
+export interface ICommand {    
     handleCommand(message: discord.Message);
 }
-
-export { ICommand };

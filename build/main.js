@@ -12,14 +12,15 @@ client.on('ready', function () {
     console.log("I am ready");
 });
 client.on('message', function (message) {
+    if (message.author.bot)
+        return;
+    if (message.content.indexOf(prefix) !== 0)
+        return;
     var args = message.content.slice(prefix.length).trim().split(/ !/g);
     var commandString = args.shift().toLowerCase();
     var command = map.get(commandString);
     if (command != null) {
-        command.handleCommand(message);
-    }
-    else {
-        message.channel.send("Invalid command");
+        command.handleCommand(message, args);
     }
 });
 client.login(token);
