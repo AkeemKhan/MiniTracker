@@ -28,6 +28,7 @@ export class Bo4Command implements ICommand {
         
         var endpoint = "https://cod-api.theapinetwork.com/api/stats/bo4/" + accountName.replace("#","-") + "/bnet?type=blackout";
         console.log(endpoint);
+        message.channel.send("Searching...");
         
         var rp = require('request-promise');
 
