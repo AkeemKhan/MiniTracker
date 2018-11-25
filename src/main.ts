@@ -1,5 +1,6 @@
 import * as discord from 'discord.js';
 import { Bo4Command } from "./commands/Bo4Command";
+import { DeathCommand } from "./commands/DeathCommand"
 import { ICommand } from "./commands/ICommand";
 
 const config = require("./config.json");
@@ -7,10 +8,11 @@ const client = new discord.Client();
 
 const commands = ["bo4"];
 const map = new Map<string, ICommand>();
-map.set("bo4",new Bo4Command());
 
 client.on('ready', () => {
-    console.log("I am ready");
+    console.log("Bot up and running.");
+    map.set("bo4", new Bo4Command());
+    map.set("death", new DeathCommand());
 });
 
 client.on('message', (message) => {
