@@ -6,12 +6,18 @@
     "configurations": [
         {
             "type": "node",
+            "request": "attach",
+            "name": "Attach",
+            "port": 9229
+        },
+        {
+            "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}\\main.ts",
+            "program": "D:\\Projects\\MiniTracker\\build\\main.js",
             "preLaunchTask": "tsc: build - tsconfig.json",
             "outFiles": [
-                "${workspaceFolder}/build/**/*.js"
+                "D:\\Projects\\MiniTracker\\build\\**/*.js"
             ]
         }
     ]

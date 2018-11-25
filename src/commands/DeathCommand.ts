@@ -30,6 +30,5 @@ export class DeathCommand implements ICommand {
                 console.log("Error in listener");
                 connection.disconnect();
             });
-
     }
 }
